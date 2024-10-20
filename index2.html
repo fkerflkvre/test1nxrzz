@@ -49,13 +49,14 @@
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
-            width: 300px;
-            padding: 20px;
+            width: 80%;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px); /* 背景をぼかす */
             display: flex;
             align-items: center;
+            backdrop-filter: blur(5px); /* 背景をぼかす */
+            z-index: 1000; /* 他の要素の上に表示 */
         }
         #notification .text {
             flex: 1;
@@ -72,11 +73,12 @@
         }
         #notification img {
             cursor: pointer;
-            width: 35%; /* 画像の横幅を30%に設定 */
+            width: 35%; /* 画像のサイズ調整 */
             height: auto;
+            user-select: none; /* テキスト選択を無効化 */
         }
         audio {
-            display: none; /* 音声プレイヤーを非表示にする */
+            display: none; /* オーディオを非表示にする */
         }
     </style>
 </head>
@@ -108,7 +110,7 @@
     </div>
     <div class="res">
         <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
-        <div class="content">最後に目撃されたのは9月24日らしいね。ｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃｃ</div>
+        <div class="content">最後に目撃されたのは9月24日らしいね。ああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
     </div>
     <!-- 以下省略。あと18レスがここに続く... -->
 </div>
@@ -118,13 +120,13 @@
         <h2>細野奈美</h2>
         <p>公衆電話</p>
     </div>
-    <img src="assets/20201001_o0100.png" alt="応答" onclick="closeNotification() oncontextmenu="return false;"">
+    <img src="assets/20201001_o0100.png" alt="応答" onclick="closeNotification()">
 </div>
 
 <audio id="ringtone" src="assets/opening_2.mp3" preload="auto"></audio>
 
 <script>
-    // 30秒後に通知を表示
+    // 掲示板表示後30秒で通知を表示
     setTimeout(function() {
         document.getElementById('notification').style.display = 'flex';
         document.getElementById('ringtone').play();  // 音声を再生
