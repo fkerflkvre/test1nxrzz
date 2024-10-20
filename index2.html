@@ -44,9 +44,9 @@
         #notification {
             display: none;
             position: fixed;
-            top: 50%;
+            top: 10px; /* 上部に配置 */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
             width: 300px;
@@ -114,10 +114,10 @@
         <h2>細野奈美</h2>
         <p>公衆電話</p>
     </div>
-    <img src="assets/20201001_o0100.png" alt="応答" onclick="closeNotification()">
+    <img src="20201001_o0100.png" alt="応答" onclick="closeNotification()">
 </div>
 
-<audio id="ringtone" src="assets/opening_2.mp3" preload="auto"></audio>
+<audio id="ringtone" src="opening_2.mp3" preload="auto"></audio>
 
 <script>
     // 30秒後に通知を表示
