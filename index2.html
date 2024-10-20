@@ -44,17 +44,31 @@
         #notification {
             display: none;
             position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 20px;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            width: 300px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         #notification h2 {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin: 0;
+            font-weight: bold;
+        }
+        #notification .public-phone {
+            font-size: 0.8em;
+            color: #ccc;
+        }
+        #notification img {
+            width: 50px;
+            height: 50px;
         }
         #notification button {
             background-color: #007aff;
@@ -103,15 +117,19 @@
 </div>
 
 <div id="notification">
-    <h2>電話着信 - 細野奈美</h2>
-    <p>細野奈美からの着信です。応答しますか？</p>
+    <h2>細野奈美</h2>
+    <p class="public-phone">公衆電話</p>
+    <img src="20201001_o0100.png" alt="細野奈美の写真">
     <button onclick="closeNotification()">応答する</button>
 </div>
+
+<audio id="ringtone" src="opening_2.mp3"></audio>
 
 <script>
     // 1分後に通知を表示
     setTimeout(function() {
-        document.getElementById('notification').style.display = 'block';
+        document.getElementById('notification').style.display = 'flex';
+        document.getElementById('ringtone').play(); // 着信音を再生
     }, 60000);  // 60秒後
 
     function closeNotification() {
