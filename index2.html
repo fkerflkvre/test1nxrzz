@@ -129,8 +129,8 @@
     setTimeout(function() {
         document.getElementById('notification').style.display = 'flex';
         document.getElementById('ringtone').play();  // 音声を再生
-        if (navigator.vibrate) {
-            navigator.vibrate(200); // 200ミリ秒バイブレーション
+    window.navigator.vibrate([200,100,200]);
+  }// 200ミリ秒バイブレーション
         }
     }, 30000);  // 30秒後
 
