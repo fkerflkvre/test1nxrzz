@@ -27,7 +27,6 @@
                 <a-image
                     src="assets/ポスター.jpg"
                     scale="1 1 1"
-                    class="clickable"
                     rotation="-90 0 0"
                     gesture-handler
                 ></a-image>
@@ -45,10 +44,10 @@
                 marker.addEventListener("markerFound", () => {
                     console.log("AR marker found!");
 
-                    // 5秒後にページをリダイレクト
+                    // 10秒後にページをリダイレクト
                     setTimeout(() => {
                         window.location.href = "https://fkerflkvre.github.io/test1nxrzz/index2.html";
-                    }, 5000);
+                    }, 10000);
                 });
 
                 // markerが見えなくなった時のイベントも追加（確認用）
