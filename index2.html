@@ -127,12 +127,12 @@
 <script>
     // 30秒後に通知を表示
     setTimeout(function() {
-        document.getElementById('#notification').style.display = 'flex';
+        document.getElementById('notification').style.display = 'flex';
         document.getElementById('ringtone').play();  // 音声を再生
     }, 30000);  // 30秒後
 
     function closeNotification() {
-        document.getElementById('#notification').style.display = 'none';
+        document.getElementById('notification').style.display = 'none';
         document.getElementById('ringtone').pause();  // 音声を停止
         document.getElementById('ringtone').currentTime = 0;  // 音声を最初に戻す
         alert("応答しました");
