@@ -52,7 +52,7 @@
             width: 300px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
         }
@@ -109,22 +109,22 @@
     <!-- 以下省略。あと18レスがここに続く... -->
 </div>
 
-<audio id="ringtone" src="opening_2.mp3" preload="auto"></audio>
-
 <div id="notification">
     <div class="text">
         <h2>細野奈美</h2>
         <p>公衆電話</p>
     </div>
-    <img src="20201001_o0100.png" alt="応答" onclick="closeNotification()">
+    <img src="assets/20201001_o0100.png" alt="応答" onclick="closeNotification()">
 </div>
 
+<audio id="ringtone" src="assets/opening_2.mp3" preload="auto"></audio>
+
 <script>
-    // 1分後に通知を表示
+    // 30秒後に通知を表示
     setTimeout(function() {
         document.getElementById('notification').style.display = 'flex';
         document.getElementById('ringtone').play();  // 音声を再生
-    }, 60000);  // 60秒後
+    }, 30000);  // 30秒後
 
     function closeNotification() {
         document.getElementById('notification').style.display = 'none';
