@@ -24,7 +24,6 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
             >
                 <a-image
                     src="assets/ポスター.jpg"
@@ -39,17 +38,25 @@
         </a-scene>
 
         <script>
-            // マーカーが認識されたら発火するイベント
-            const marker = document.querySelector("#markerA");
+            window.onload = () => {
+                // ページ読み込み後にイベントを設定
+                const marker = document.querySelector("#animated-marker");
 
-            marker.addEventListener("markerFound", () => {
-                console.log("AR marker found!");
+                // markerが見つかった時にイベントを実行
+                marker.addEventListener("markerFound", () => {
+                    console.log("AR marker found!");
 
-                // 5秒後にページをリダイレクト
-                setTimeout(() => {
-                    window.location.href = "https://fkerflkvre.github.io/test1nxrzz/index2.html";
-                }, 5000); // 5秒（5000ミリ秒）後にリダイレクト
-            });
+                    // 5秒後にページをリダイレクト
+                    setTimeout(() => {
+                        window.location.href = "https://fkerflkvre.github.io/test1nxrzz/index2.html";
+                    }, 5000);
+                });
+
+                // markerが見えなくなった時のイベントも追加（確認用）
+                marker.addEventListener("markerLost", () => {
+                    console.log("AR marker lost!");
+                });
+            };
         </script>
     </body>
 </html>
