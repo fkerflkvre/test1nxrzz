@@ -3,145 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2ちゃんねる風掲示板</title>
+    <title>大正大学で行方不明の噂</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #f0f0f0;
+            color: #000;
         }
         .container {
             width: 80%;
             margin: 0 auto;
-        }
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-        nav {
-            margin: 1em 0;
-            text-align: center;
-        }
-        main {
-            display: flex;
-        }
-        .threads {
-            flex: 3;
-        }
-        aside {
-            flex: 1;
-            margin-left: 1em;
-            background-color: #f9f9f9;
-            padding: 1em;
+            background-color: #fff;
+            padding: 20px;
             border: 1px solid #ccc;
         }
         .thread {
-            background-color: #fff;
-            padding: 1em;
-            margin-bottom: 1em;
-            border: 1px solid #ccc;
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
         }
         .thread h2 {
-            font-size: 1.2em;
+            margin: 0;
+            font-size: 18px;
         }
         .thread p {
-            font-size: 0.9em;
+            margin: 5px 0;
         }
-        .post {
-            background-color: #f9f9f9;
-            margin: 1em 0;
-            padding: 0.5em;
-            border-left: 5px solid #ccc;
+        .meta {
+            font-size: 12px;
+            color: #888;
         }
-        .post .meta {
-            font-size: 0.8em;
-            color: #666;
-        }
-        form {
-            margin-top: 2em;
-            padding: 1em;
-            background-color: #fff;
+        .notification {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            background-color: white;
             border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        label, textarea, input[type="text"], input[type="submit"] {
+        .notification img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .notification h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .notification p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .notification.active {
             display: block;
-            width: 100%;
-            margin-bottom: 1em;
-        }
-        input[type="submit"] {
-            width: auto;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>2ちゃんねる風掲示板</h1>
-        </header>
-        <nav>
-            <a href="#">ホーム</a> | <a href="#">スレッド一覧</a> | <a href="#">新しいスレッドを立てる</a>
-        </nav>
-        <main>
-            <section class="threads">
-                <article class="thread">
-                    <h2>【驚愕】猫が会話してきたんだがwwww</h2>
-                    <p>1: 名無しさん 2024/10/15(月) 12:34:56 ID:1234abcd<br>
-                    今日、家の猫が「おはよう」って言ってきた。まじで怖かったんだが、誰か同じような経験ある？</p>
-                    
-                    <div class="post">
-                        <div class="meta">2: 名無しさん 2024/10/15(月) 12:45:12 ID:5678efgh</div>
-                        <p>お前疲れてんだよ。寝ろ。</p>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="meta">3: 名無しさん 2024/10/15(月) 12:48:34 ID:abcd5678</div>
-                        <p>猫が喋るとかまじでないからｗｗｗ 幻覚見てんじゃね？</p>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="meta">4: 名無しさん 2024/10/15(月) 13:02:22 ID:efgh1234</div>
-                        <p>いや、俺の猫も「ごはん」って言ったことあるんだけど……</p>
-                    </div>
 
-                    <div class="post">
-                        <div class="meta">5: 名無しさん 2024/10/15(月) 13:12:45 ID:ijkl9876</div>
-                        <p>動物ってたまに人間の言葉真似してるっぽい時あるよな。鳥とかもしゃべるし。</p>
-                    </div>
-                </article>
-
-                <article class="thread">
-                    <h2>【議論】朝ごはんはパンかご飯か</h2>
-                    <p>1: 名無しさん 2024/10/15(月) 08:15:45 ID:7890abcd<br>
-                    朝ごはんにパン派とご飯派で意見が割れるんだけど、どっちが正解なんだろうか？</p>
-                    
-                    <div class="post">
-                        <div class="meta">2: 名無しさん 2024/10/15(月) 08:22:32 ID:bcde2345</div>
-                        <p>パンだろ！忙しい朝にご飯なんて食ってられんわ。</p>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="meta">3: 名無しさん 2024/10/15(月) 08:34:56 ID:cdef3456</div>
-                        <p>いや、ご飯でしょ。腹持ちいいし、和食が一番だよ。</p>
-                    </div>
-                </article>
-            </section>
-
-            <aside>
-                <h3>最近のスレッド</h3>
-                <ul>
-                    <li><a href="#">【速報】ゲーム新作発表！</a></li>
-                    <li><a href="#">【悲報】仕事辞めたいんだが…</a></li>
-                    <li><a href="#">【感動】ペットの最期</a></li>
-                </ul>
-            </aside>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 2ちゃんねる風掲示板</p>
-        </footer>
+<div class="container">
+    <h1>大正大学で行方不明の噂</h1>
+    <div class="thread">
+        <h2>【噂】大正大学で女の子が行方不明らしい</h2>
+        <p class="meta">1: 名無しさん 2024/10/21(月) 12:34:56 ID:abc123</p>
+        <p>誰か知ってる？ 9月24日から大正大学の2年生、細野奈美っていう子が行方不明らしい。身長155cm、瘦せ型細見で、ボブ黒髪ぱっつん。白いブラウス、紺色のカーディガン、黒色ズボン、白いナイキのスニーカー、キャンバス生地のカバンを持ってたらしいけど...</p>
+        <p>大学内で目撃情報ないみたいなんだけど、怖すぎる...</p>
     </div>
+    <div class="thread">
+        <h2>【噂】細野奈美ちゃんってどうなった？</h2>
+        <p class="meta">2: 名無しさん 2024/10/21(月) 12:36:45 ID:def456</p>
+        <p>昨日の夜もまだ見つかってないって話だよ。警察も捜索してるらしいけど、何か怪しい...</p>
+    </div>
+</div>
+
+<div id="notification" class="notification">
+    <img src="iphone_avatar.png" alt="caller avatar">
+    <h3>細野奈美</h3>
+    <p>着信中...</p>
+</div>
+
+<script>
+    // 1分経ったら通知を表示する
+    setTimeout(function() {
+        var notification = document.getElementById('notification');
+        notification.classList.add('active');
+    }, 60000); // 1分 (60秒 = 60000ミリ秒)
+
+    // クリックで通知を閉じる
+    document.getElementById('notification').addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+</script>
+
 </body>
 </html>
