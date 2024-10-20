@@ -109,7 +109,7 @@
     </div>
     <div class="res">
         <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
-        <div class="content">最後に目撃されたのは9月24日らしいね。１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１</div>
+        <div class="content">最後に目撃されたのは9月24日らしいね。２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２</div>
     </div>
     <!-- 以下省略。あと18レスがここに続く... -->
 </div>
@@ -125,15 +125,17 @@
 <audio id="ringtone" src="https://github.com/fkerflkvre/test1nxrzz/raw/refs/heads/gh-pages/assets/iPhone%E7%9D%80%E4%BF%A1%E9%9F%B3%20opening_2.mp3" preload="auto"></audio>
 
 <script>
-    // 30秒後に通知を表示
-    setTimeout(function() {
+    // ユーザーが画面をスクロールしたときに音声とバイブレーションを再生
+    window.addEventListener('scroll', function() {
         document.getElementById('notification').style.display = 'flex';
         document.getElementById('ringtone').play();  // 音声を再生
         if (navigator.vibrate) {
             navigator.vibrate(200); // 200ミリ秒バイブレーション
         }
-    }, 30000);  // 30秒後
-
+        // スクロールイベントを一度だけ実行
+        window.removeEventListener('scroll', arguments.callee);
+    });
+    
     function closeNotification() {
         document.getElementById('notification').style.display = 'none';
         document.getElementById('ringtone').pause();  // 音声を停止
