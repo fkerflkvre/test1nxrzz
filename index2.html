@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>着信通知</title>
+    <title>大正大学で行方不明事件の噂</title>
     <style>
         body {
             font-family: "MS PGothic", sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .res {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .res-number {
+            color: #006600;
+        }
+        .username {
+            font-weight: bold;
+            color: #0000cc;
+        }
+        .date {
+            color: #808080;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-top: 5px;
         }
         #notification {
             display: none;
@@ -22,7 +52,7 @@
             width: 300px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
         }
@@ -48,15 +78,46 @@
 </head>
 <body>
 
+<div class="container">
+    <h1>【噂】大正大学で行方不明になった学生がいるって本当？</h1>
+
+    <!-- 24個のレス -->
+    <div class="res">
+        <span class="res-number">1 ：名無しさん ：2024/09/25(土) 14:00:01 ID:ABCDEF123</span>
+        <div class="content">なんか、大正大学で女の子が行方不明になったらしいよ。</div>
+    </div>
+    <div class="res">
+        <span class="res-number">2 ：名無しさん ：2024/09/25(土) 14:02:15 ID:GHIJKL456</span>
+        <div class="content">マジ？誰か知ってる？</div>
+    </div>
+    <div class="res">
+        <span class="res-number">3 ：名無しさん ：2024/09/25(土) 14:04:32 ID:XYZ789</span>
+        <div class="content">細野奈美って子らしい。2年生で結構目立ってたとか。</div>
+    </div>
+    <div class="res">
+        <span class="res-number">4 ：名無しさん ：2024/09/25(土) 14:06:05 ID:DEF456</span>
+        <div class="content">身長155cm、瘦せ型で黒髪ボブ、って噂聞いたわ。</div>
+    </div>
+    <div class="res">
+        <span class="res-number">5 ：名無しさん ：2024/09/25(土) 14:07:18 ID:QRS012</span>
+        <div class="content">あー、あの子か。白いブラウスに紺のカーディガン着てた子だろ？</div>
+    </div>
+    <div class="res">
+        <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
+        <div class="content">最後に目撃されたのは9月24日らしいね。</div>
+    </div>
+    <!-- 以下省略。あと18レスがここに続く... -->
+</div>
+
+<audio id="ringtone" src="opening_2.mp3" preload="auto"></audio>
+
 <div id="notification">
     <div class="text">
         <h2>細野奈美</h2>
         <p>公衆電話</p>
     </div>
-    <img src="assets/20201001_o0100.png" alt="応答" onclick="closeNotification()">
+    <img src="20201001_o0100.png" alt="応答" onclick="closeNotification()">
 </div>
-
-<audio id="ringtone" src="assets/opening_2.mp3" preload="auto"></audio>
 
 <script>
     // 1分後に通知を表示
