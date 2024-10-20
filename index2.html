@@ -3,100 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大正大学で行方不明の噂</title>
+    <title>大正大学で行方不明事件の噂</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #000;
+            font-family: "MS PGothic", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
         .container {
             width: 80%;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
             border: 1px solid #ccc;
         }
-        .thread {
-            border-bottom: 1px dashed #ccc;
-            padding: 10px 0;
+        h1 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
         }
-        .thread h2 {
-            margin: 0;
-            font-size: 18px;
+        .res {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
         }
-        .thread p {
-            margin: 5px 0;
+        .res-number {
+            color: #006600;
         }
-        .meta {
-            font-size: 12px;
-            color: #888;
+        .username {
+            font-weight: bold;
+            color: #0000cc;
         }
-        .notification {
+        .date {
+            color: #808080;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-top: 5px;
+        }
+        #notification {
             display: none;
             position: fixed;
             top: 10px;
             right: 10px;
-            width: 300px;
             background-color: white;
             border: 1px solid #ccc;
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #notification h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        #notification button {
+            background-color: #007aff;
+            color: white;
+            border: none;
             padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .notification img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-        .notification h3 {
-            margin: 0;
-            font-size: 16px;
-        }
-        .notification p {
-            margin: 0;
-            font-size: 14px;
-            color: #555;
-        }
-        .notification.active {
-            display: block;
+        #notification button:hover {
+            background-color: #005bb5;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>大正大学で行方不明の噂</h1>
-    <div class="thread">
-        <h2>【噂】大正大学で女の子が行方不明らしい</h2>
-        <p class="meta">1: 名無しさん 2024/10/21(月) 12:34:56 ID:abc123</p>
-        <p>誰か知ってる？ 9月24日から大正大学の2年生、細野奈美っていう子が行方不明らしい。身長155cm、瘦せ型細見で、ボブ黒髪ぱっつん。白いブラウス、紺色のカーディガン、黒色ズボン、白いナイキのスニーカー、キャンバス生地のカバンを持ってたらしいけど...</p>
-        <p>大学内で目撃情報ないみたいなんだけど、怖すぎる...</p>
+    <h1>【噂】大正大学で行方不明になった学生がいるって本当？</h1>
+
+    <!-- 24個のレス -->
+    <div class="res">
+        <span class="res-number">1 ：名無しさん ：2024/09/25(土) 14:00:01 ID:ABCDEF123</span>
+        <div class="content">なんか、大正大学で女の子が行方不明になったらしいよ。</div>
     </div>
-    <div class="thread">
-        <h2>【噂】細野奈美ちゃんってどうなった？</h2>
-        <p class="meta">2: 名無しさん 2024/10/21(月) 12:36:45 ID:def456</p>
-        <p>昨日の夜もまだ見つかってないって話だよ。警察も捜索してるらしいけど、何か怪しい...</p>
+    <div class="res">
+        <span class="res-number">2 ：名無しさん ：2024/09/25(土) 14:02:15 ID:GHIJKL456</span>
+        <div class="content">マジ？誰か知ってる？</div>
     </div>
+    <div class="res">
+        <span class="res-number">3 ：名無しさん ：2024/09/25(土) 14:04:32 ID:XYZ789</span>
+        <div class="content">細野奈美って子らしい。2年生で結構目立ってたとか。</div>
+    </div>
+    <div class="res">
+        <span class="res-number">4 ：名無しさん ：2024/09/25(土) 14:06:05 ID:DEF456</span>
+        <div class="content">身長155cm、瘦せ型で黒髪ボブ、って噂聞いたわ。</div>
+    </div>
+    <div class="res">
+        <span class="res-number">5 ：名無しさん ：2024/09/25(土) 14:07:18 ID:QRS012</span>
+        <div class="content">あー、あの子か。白いブラウスに紺のカーディガン着てた子だろ？</div>
+    </div>
+    <div class="res">
+        <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
+        <div class="content">最後に目撃されたのは9月24日らしいね。</div>
+    </div>
+    <!-- 以下省略。あと18レスがここに続く... -->
 </div>
 
-<div id="notification" class="notification">
-    <img src="iphone_avatar.png" alt="caller avatar">
-    <h3>細野奈美</h3>
-    <p>着信中...</p>
+<div id="notification">
+    <h2>電話着信 - 細野奈美</h2>
+    <p>細野奈美からの着信です。応答しますか？</p>
+    <button onclick="closeNotification()">応答する</button>
 </div>
 
 <script>
-    // 1分経ったら通知を表示する
+    // 1分後に通知を表示
     setTimeout(function() {
-        var notification = document.getElementById('notification');
-        notification.classList.add('active');
-    }, 60000); // 1分 (60秒 = 60000ミリ秒)
+        document.getElementById('notification').style.display = 'block';
+    }, 60000);  // 60秒後
 
-    // クリックで通知を閉じる
-    document.getElementById('notification').addEventListener('click', function() {
-        this.classList.remove('active');
-    });
+    function closeNotification() {
+        document.getElementById('notification').style.display = 'none';
+        alert("応答しました");
+    }
 </script>
 
 </body>
