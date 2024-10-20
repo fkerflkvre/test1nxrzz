@@ -109,7 +109,7 @@
     </div>
     <div class="res">
         <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
-        <div class="content">最後に目撃されたのは9月24日らしいね。５４５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５５</div>
+        <div class="content">最後に目撃されたのは9月24日らしいね。６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６</div>
     </div>
     <!-- 以下省略。あと18レスがここに続く... -->
 </div>
@@ -125,14 +125,11 @@
 <audio id="ringtone" src="https://github.com/fkerflkvre/test1nxrzz/raw/refs/heads/gh-pages/assets/iPhone%E7%9D%80%E4%BF%A1%E9%9F%B3%20opening_2.mp3" preload="auto"></audio>
 
 <script>
-    // スクロールイベントを監視
-    window.addEventListener('scroll', function() {
-        // スクロールした場合、30秒後に通知を表示する
         setTimeout(function() {
             document.getElementById('notification').style.display = 'flex';
             document.getElementById('ringtone').play();  // 音声を再生
             if (navigator.vibrate) {
-                navigator.vibrate(200); // 200ミリ秒バイブレーション
+                navigator.vibrate(200,100,200,100,200,100,200,100,200,100,200,100,200,100,200); // 200ミリ秒バイブレーション
             }
         }, 30000);  // 30秒後
     }, { once: true }); // 一度だけ実行
