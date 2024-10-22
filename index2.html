@@ -109,7 +109,7 @@
     </div>
     <div class="res">
         <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
-        <div class="content">最後に目撃されたのは9月24日らしいね。２２２２２２２２２２２２２２２２２２２２２２２２２２２２２</div>
+        <div class="content">最後に目撃されたのは9月24日らしいね。６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６</div>
     </div>
     <!-- 以下省略。あと18レスがここに続く... -->
 </div>
@@ -125,19 +125,38 @@
 <audio id="ringtone" src="https://github.com/fkerflkvre/test1nxrzz/raw/refs/heads/gh-pages/assets/iPhone%E7%9D%80%E4%BF%A1%E9%9F%B3%20opening_2.mp3" preload="auto"></audio>
 
 <script>
-    // 10秒後に通知を表示
-    setTimeout(function() {
-        document.getElementById('notification').style.display = 'flex';
-        document.getElementById('ringtone').play();  // 音声を再生
-        if (navigator.vibrate) {
-            navigator.vibrate(500,200,500,200,500,200,500,200,); // 500ミリ秒バイブレーション
+    let hasScrolled = false;
+
+    // スクロールイベントをトリガーに
+    window.addEventListener('scroll', function() {
+        if (!hasScrolled) {
+            hasScrolled = true;  // 一度だけスクロールを検知する
+
+            // 10秒後に通知を表示
+            setTimeout(function() {
+                document.getElementById('notification').style.display = 'flex';
+                const ringtone = document.getElementById('ringtone');
+
+                // 音声を再生
+                ringtone.play().catch(function(error) {
+                    console.error("音声の再生に失敗しました:", error);
+                });
+
+                // バイブレーションを実行
+                if (navigator.vibrate) {
+                    navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200]); // バイブレーションパターン
+                }
+            }, 10000);  // 10秒後
         }
-    }, 10000);  // 10秒後
+    });
 
     function closeNotification() {
         document.getElementById('notification').style.display = 'none';
-        document.getElementById('ringtone').pause();  // 音声を停止
-        document.getElementById('ringtone').currentTime = 0;  // 音声を最初に戻す
+        const ringtone = document.getElementById('ringtone');
+
+        // 音声を停止
+        ringtone.pause();
+        ringtone.currentTime = 0;  // 音声を最初に戻す
         alert("応答しました");
     }
 </script>
