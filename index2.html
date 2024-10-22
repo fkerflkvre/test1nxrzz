@@ -52,7 +52,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px); /* 背景をぼかす */
+            backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
             display: none;
@@ -72,12 +72,12 @@
         }
         #notification img {
             cursor: pointer;
-            width: 35%; /* 画像の横幅を35%に設定 */
+            width: 35%;
             height: auto;
-            user-select: none; /* テキスト選択を無効化 */
+            user-select: none;
         }
         audio {
-            display: none; /* 音声プレイヤーを非表示にする */
+            display: none;
         }
     </style>
 </head>
@@ -86,7 +86,6 @@
 <div class="container">
     <h1>【噂】大正大学で行方不明になった学生がいるって本当？</h1>
 
-    <!-- 24個のレス -->
     <div class="res">
         <span class="res-number">1 ：名無しさん ：2024/09/25(土) 14:00:01 ID:ABCDEF123</span>
         <div class="content">なんか、大正大学で女の子が行方不明になったらしいよ。</div>
@@ -109,9 +108,8 @@
     </div>
     <div class="res">
         <span class="res-number">6 ：名無しさん ：2024/09/25(土) 14:08:45 ID:UVI098</span>
-        <div class="content">最後に目撃されたのは9月24日らしいね。６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６６</div>
+        <div class="content">最後に目撃されたのは9月24日らしいね。２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２２</div>
     </div>
-    <!-- 以下省略。あと18レスがここに続く... -->
 </div>
 
 <div id="notification">
@@ -125,30 +123,25 @@
 <audio id="ringtone" src="https://github.com/fkerflkvre/test1nxrzz/raw/refs/heads/gh-pages/assets/iPhone%E7%9D%80%E4%BF%A1%E9%9F%B3%20opening_2.mp3" preload="auto"></audio>
 
 <script>
-    let hasScrolled = false;
+    let timer;
 
-    // スクロールイベントをトリガーに
-    window.addEventListener('scroll', function() {
-        if (!hasScrolled) {
-            hasScrolled = true;  // 一度だけスクロールを検知する
+    // ページをクリックしたときにタイマーを開始
+    document.addEventListener('click', function() {
+        timer = setTimeout(function() {
+            document.getElementById('notification').style.display = 'flex';
+            const ringtone = document.getElementById('ringtone');
 
-            // 10秒後に通知を表示
-            setTimeout(function() {
-                document.getElementById('notification').style.display = 'flex';
-                const ringtone = document.getElementById('ringtone');
+            // 音声を再生
+            ringtone.play().catch(function(error) {
+                console.error("音声の再生に失敗しました:", error);
+            });
 
-                // 音声を再生
-                ringtone.play().catch(function(error) {
-                    console.error("音声の再生に失敗しました:", error);
-                });
-
-                // バイブレーションを実行
-                if (navigator.vibrate) {
-                    navigator.vibrate([200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200]); // バイブレーションパターン
-                }
-            }, 10000);  // 10秒後
-        }
-    });
+            // バイブレーションを実行
+            if (navigator.vibrate) {
+                navigator.vibrate([200, 100, 200, 100, 200]); // 200ミリ秒振動、100ミリ秒の間隔
+            }
+        }, 10000); // 10秒後に実行
+    }, { once: true });
 
     function closeNotification() {
         document.getElementById('notification').style.display = 'none';
@@ -156,8 +149,11 @@
 
         // 音声を停止
         ringtone.pause();
-        ringtone.currentTime = 0;  // 音声を最初に戻す
+        ringtone.currentTime = 0; // 音声を最初に戻す
         alert("応答しました");
+
+        // タイマーをクリア
+        clearTimeout(timer);
     }
 </script>
 
