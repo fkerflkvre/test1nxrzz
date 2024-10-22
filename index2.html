@@ -125,14 +125,14 @@
 <audio id="ringtone" src="https://github.com/fkerflkvre/test1nxrzz/raw/refs/heads/gh-pages/assets/iPhone%E7%9D%80%E4%BF%A1%E9%9F%B3%20opening_2.mp3" preload="auto"></audio>
 
 <script>
-    // 30秒後に通知を表示
+    // 10秒後に通知を表示
     setTimeout(function() {
         document.getElementById('notification').style.display = 'flex';
         document.getElementById('ringtone').play();  // 音声を再生
         if (navigator.vibrate) {
             navigator.vibrate(200,100,200,100,200,100,200,100,200,100,200,100,200,100,200); // 200ミリ秒バイブレーション
         }
-    }, 30000);  // 30秒後
+    }, 10000);  // 10秒後
 
     function closeNotification() {
         document.getElementById('notification').style.display = 'none';
